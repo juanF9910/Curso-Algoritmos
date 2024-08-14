@@ -7,7 +7,7 @@ using namespace std;
 template <class T>
 void burbuja(T* lista, int n){
     for(int i = 0; i < n; i++){ //recorro la lista n veces 
-        for(int j = 0; j < n-1; j++){ //en cada recorrido voy desde el inicio hasta el penúltimo elemento
+        for(int j = 0; j < n-i-1; j++){ //en cada recorrido voy desde el inicio hasta el penúltimo elemento
             if(lista[j] > lista[j+1]){
                 T aux = lista[j];    
                 lista[j] = lista[j+1];

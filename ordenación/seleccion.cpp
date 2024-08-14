@@ -10,11 +10,11 @@ using namespace std;
 */
 template <class T>
 void ord_seleccion(T* lista, int n){
-    int min;
-    T aux;
+
+
     for(int i = 0; i < n-1; i++){
 
-        min = i; //asumimos que el primer elemento es el más pequeño
+        int min = i; //asumimos que el primer elemento es el más pequeño
 
         for(int j = i+1; j < n; j++){ //recorremos la lista desde el segundo elemento
             if(lista[j] < lista[min]){ //si encontramos un elemento más pequeño
@@ -22,7 +22,7 @@ void ord_seleccion(T* lista, int n){
             }
         }
         //procedemos a intercambiar los elementos
-        aux = lista[i];
+        T aux = lista[i];
         lista[i] = lista[min]; //en la posición i pongo el que era el mínimo
         lista[min] = aux; //ponemos en la posición del mínimo a aux
     }

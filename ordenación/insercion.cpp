@@ -4,6 +4,12 @@
 using namespace std;
 
 /*Este algoritmo también ordena de menor a mayor*/
+/*los pasos son:
+1. Seleccionar el primer elemento de la lista.
+2. Si el elemento actual es menor al anterior, se intercambian.
+3. Se repiten los pasos 1 y 2 hasta que se recorra toda la lista.
+
+*/
 template <class T>
 void ord_insercion(T* lista, int n) {
     int pos;
