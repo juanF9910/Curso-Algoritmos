@@ -9,11 +9,11 @@ def merge(lista):
         izquierda = lista[:medio] #desde el inicio hasta la mitad
         derecha = lista[medio:] #desde la mitad hasta el final
 
-        merge(izquierda)
-        merge(derecha)
-
+        merge(izquierda) #llamada recursiva en la parte izquierda
+        merge(derecha) #llamada recursiva en la parte derecha
+        #lo anterior se ejecuta hasta que solo tengamos listas de un elemento
         i = j = k = 0
-
+        #k es el iterador para la lista principal
         while i < len(izquierda) and j < len(derecha):
             if izquierda[i] < derecha[j]:
                 lista[k] = izquierda[i]
