@@ -10,6 +10,7 @@ using namespace std;
 3. Se repiten los pasos 1 y 2 hasta que se recorra toda la lista.
 
 */
+//la complejidad de este algoritmo es O(n^2)
 template <class T>
 void ord_insercion(T* lista, int n) {
     int pos;
