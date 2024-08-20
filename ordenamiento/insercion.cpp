@@ -13,18 +13,18 @@ using namespace std;
 //la complejidad de este algoritmo es O(n^2)
 template <class T>
 void ord_insercion(T* lista, int n) {
-    int pos;
-    T aux; 
+    int pos_act;
+    T val_act; 
     //vamos a recorrer toda la lista
     for(int i=0; i<n; i++){
-        pos=i; 
-        aux=lista[i];
+        pos_act=i; //posición actual
+        val_act=lista[i]; //elemento actual
         //mientras la posición sea mayor a 0 y el elemento anterior sea mayor al actual
-        while((pos>0) && (lista[pos-1]>aux)){
-            lista[pos]=lista[pos-1]; //el elemento actual se convierte en el anterior
-            pos--; //decrementamos la posición
+        while((pos_act>0) && (lista[pos_act-1]>val_act)){
+            lista[pos_act]=lista[pos_act-1]; //el elemento actual se convierte en el anterior
+            pos_act--; //decrementamos la posición
         }
-        lista[pos]=aux; //el elemento actual se convierte en el auxiliar
+        lista[pos_act]=val_act; //el elemento actual se convierte en el auxiliar
 
     }
 }

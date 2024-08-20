@@ -40,8 +40,8 @@ def merge(lista):
 
 import random
 if __name__ == "__main__":
-    n=20
 
+    n=20
     lista = [random.randint(0, 100) for i in range(n)]
     #el comando random.randint(0, 100) genera un número aleatorio entre 0 y 100 incluidos
     print(merge(lista))  # [1, 2, 3, 4, 5]

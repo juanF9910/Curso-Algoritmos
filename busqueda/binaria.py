@@ -11,8 +11,10 @@ def binaria(lista, num):
     return False
 
 def binaria_recursiva(lista, num, izq, der): 
-    if izq > der: 
+
+    if izq > der: #caso base o condiciones de parada
         return False 
+    
     medio = (izq+der)//2 
     if lista[medio] == num: 
         return True 

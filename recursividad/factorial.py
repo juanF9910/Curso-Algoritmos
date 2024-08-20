@@ -11,8 +11,11 @@ def factorial(n):
     return resp
 
 def factorial_r(n): ##la recursividad es más rápida que el ciclo
+    #siempre que se va a implementar una función recursiva, se debe tener en cuenta el caso base
+    #es decir, el caso en el que la función no se llama a sí misma, éste da la condición de parada, sino se cae en un ciclo infinito
     if n == 0:
-        return 1
+        return 1 #caso base, es decir, caso que se resuelve
+        #sin recursión
     return n * factorial_r(n - 1)
 
 if __name__ == "__main__": #se usa para que el código dentro de este if solo se ejecute si se corre este archivo
