@@ -14,8 +14,10 @@ template <class T>
 bool busquedaBinaria(T* arreglo, int tamano, T valor) {
     int inicio = 0;
     int fin = tamano - 1; 
+
     while (inicio <= fin) {
         int medio = (inicio + fin) / 2; //sacamos la mitad del arreglo
+        
         if (arreglo[medio] == valor) {
             return true;
         }

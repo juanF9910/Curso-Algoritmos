@@ -13,7 +13,7 @@ void cambiar_pos(T* lista, int i, int j){
 }
 
 
-template <class T>
+template <class T>    
 void burbuja(T* lista, int n){
     for(int i = 0; i < n; i++){ //recorro la lista n veces 
         for(int j = 0; j < n-i-1; j++){ //en cada recorrido voy desde el inicio hasta el penúltimo elemento
