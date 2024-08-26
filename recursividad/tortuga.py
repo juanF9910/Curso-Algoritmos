@@ -4,7 +4,8 @@ tortuga=turtle.Turtle()
 win=turtle.Screen()
 
 def dibujar_espiral(tortuga, longitud_linea):
-    if longitud_linea > 0:
+
+    if longitud_linea > 0: #caso base
         tortuga.forward(longitud_linea)
         tortuga.right(90)
         dibujar_espiral(tortuga, longitud_linea - 5)

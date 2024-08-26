@@ -52,13 +52,13 @@ void merge(vector<T> &lista, int inicio, int medio, int fin){ //función para me
 }
 
 template <class T>
-void mergeSort(vector<T>& lista, int inicio, int fin){
-    if(inicio < fin){ //si el inicio es menor al fin
-        int medio = inicio + (fin - inicio) / 2; //sacamos la mitad de la lista
-        mergeSort(lista, inicio, medio); //llamamos recursivamente a mergeSort con la mitad izquierda, es decir, se ordena la mitad izquierda
-        /*la función merge modifica la lista por referencia*/
-        mergeSort(lista, medio + 1, fin); //llamamos recursivamente a mergeSort con la mitad derecha, se ordena la mitad derecha
-        merge(lista, inicio, medio, fin); //mezclamos las dos mitades que ya están ordenadas, merge modifica la lista por referencia también
+void mergeSort(vector<T>& lista, int inicio, int fin){ /*entregamos una lista por referencia, el índice del inicio y del índice del final de la lista*/
+
+    if(inicio < fin){ //si el inicio es menor al fin, caso base o condición de parada
+        int medio=(inicio+fin)/2; 
+        mergeSort(lista, inicio, medio); //ordenamos la mitad izquierda de la lista
+        mergeSort(lista, medio + 1, fin); //ordenamos la mitad derecha de la lista
+        merge(lista, inicio, medio, fin); //mezclamos las dos mitades que ya están ordenadas.
     }
 }
 
@@ -72,3 +72,4 @@ int main(){
     cout << endl;
     return 0;
 }
+

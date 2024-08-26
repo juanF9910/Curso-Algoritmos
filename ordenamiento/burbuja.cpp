@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-/* En este código vamos a realizar el ordenamiento de un array siguiendo el método burbuja */
 /*los números más pequeños suben hasta el inicio del arreglo, ordenamos de menor a mayor*/
 
 template <class T>
@@ -18,7 +17,7 @@ void burbuja(T* lista, int n){
     for(int i = 0; i < n; i++){ //recorro la lista n veces 
         for(int j = 0; j < n-i-1; j++){ //en cada recorrido voy desde el inicio hasta el penúltimo elemento
             if(lista[j] > lista[j+1]){
-                cambiar_pos(lista, j, j+1);
+                cambiar_pos(lista, j, j+1); //donde estaba j pongo el j+1 y viceversa
             }
         }
     }

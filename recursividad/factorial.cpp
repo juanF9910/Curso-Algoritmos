@@ -14,3 +14,5 @@ int main(){
     cout << "El factorial de " << n << " es: " << fact(n) << endl;
     return 0;
 } 
+
+//la complejidad de este algoritmo es O(n) en tiempo y O(n) en espacio
