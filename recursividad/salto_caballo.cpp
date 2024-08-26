@@ -1,5 +1,6 @@
 /*
-en este algoritmo vamos a usar el método backtracking para encontrar una solución al problema del salto del caballo
+en este algoritmo vamos a usar el método backtracking para encontrar una solución al problema del salto del caballo, 
+consiste en poner un caballo en una posición de un tablero de ajedrez de 8x8 y determinar si el caballo puede visitar todas las casillas del tablero
 */
 
 #include <iostream>
@@ -9,17 +10,8 @@ using namespace std;
 //tamaño del tablero
 #define N 8
 
-//función para imprimir la solución
-void imprimir(vector<vector<int>> &solucion){
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < N; j++){
-            cout << solucion[i][j] << " ";
-        }
-        cout << endl;
-    }
-}
 
-//función para verificar si la posición es válida
+//función para verificar si la posición es válida, esta es la tarea básica
 bool es_valido(int x, int y, vector<vector<int>> &solucion){
     return (x >= 0 && x < N && y >= 0 && y < N && solucion[x][y] == -1); //-1 significa que la posición no ha sido visitada, y que la posición es válida,
     //está dentro del tablero
@@ -41,14 +33,25 @@ bool resolver_salto_caballo(int x, int y, int mov, vector<vector<int>> &solucion
         if(es_valido(next_x, next_y, solucion)){
             solucion[next_x][next_y] = mov;
 
-            if(resolver_salto_caballo(next_x, next_y, mov + 1, solucion, x_mov, y_mov)){
+            if(resolver_salto_caballo(next_x, next_y, mov + 1, solucion, x_mov, y_mov)){ //determinamos si a partir de la posición actual podemos encontrar una solución
                 return true;
-            }else{
-                solucion[next_x][next_y] = -1; //si no hemos llegado a una solución ponemos un -1 para indicar que la posición no ha sido visitada
+            }else{ //si no hemos llegado a una solución a apartir de la posición actual ponemos un -1 
+                //y probamos con la siguiente posición
+                solucion[next_x][next_y] = -1; 
             }
         }
     }
     return false;
+}
+
+//función para imprimir la solución
+void imprimir(vector<vector<int>> &solucion){
+    for(int i = 0; i < N; i++){
+        for(int j = 0; j < N; j++){
+            cout << solucion[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
 
 int main(){
