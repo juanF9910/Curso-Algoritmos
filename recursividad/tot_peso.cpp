@@ -11,6 +11,7 @@ void imprimir(vector<int> &v){
 }
 // Función para encontrar la solución al problema del peso total
 bool encontrar_peso_total(int indice, int peso_restante, const vector<int> &pesos, vector<int> &solucion, int n) {
+    
     if (peso_restante == 0) { // Si el peso restante es 0, entonces hemos encontrado una solución
         return true; //condición de parada
     }
