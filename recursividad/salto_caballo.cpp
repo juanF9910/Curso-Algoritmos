@@ -24,15 +24,16 @@ bool resolver_salto_caballo(int x, int y, int mov, vector<vector<int>> &solucion
 
     if(mov == N*N){ //si hemos visitado todas las posiciones del tablero entonces hemos encontrado una solución
     //mov es una variable que guarda el número de movimientos válidos que ha hecho el caballo
-        return true;
+        return true; //condición de parada
     }
 
     for(k = 0; k < N; k++){ //probamos cada uno de los movimientos posibles
         next_x = x + x_mov[k];
         next_y = y + y_mov[k];
+
         if(es_valido(next_x, next_y, solucion)){
             solucion[next_x][next_y] = mov;
-
+            //tarea básica
             if(resolver_salto_caballo(next_x, next_y, mov + 1, solucion, x_mov, y_mov)){ //determinamos si a partir de la posición actual podemos encontrar una solución
                 return true;
             }else{ //si no hemos llegado a una solución a apartir de la posición actual ponemos un -1 
