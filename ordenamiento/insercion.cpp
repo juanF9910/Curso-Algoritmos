@@ -8,19 +8,24 @@ using namespace std;
 1. Seleccionar el primer elemento de la lista.
 2. Si el elemento actual es menor al anterior, se intercambian.
 3. Se repiten los pasos 1 y 2 hasta que se recorra toda la lista.
-
 */
-//la complejidad de este algoritmo es O(n^2)
+
+//LA LISTA QUE ESTÁ ANTES QUE LA POSICIÓN ACTUAL ESTÁ ORDENADA
+//BUSCO EL LUGAR ADECUADO PARA INSERTAR DESDE DONDE VOY HASTA EL INICIO
+
 template <class T>
 void ord_insercion(T* lista, int n) {
     int pos_act;
     T val_act; 
     //vamos a recorrer toda la lista
-    for(int i=0; i<n; i++){
+    for(int i=1; i<n; i++){
         pos_act=i; //posición actual
         val_act=lista[i]; //elemento actual
         //mientras la posición sea mayor a 0 y el elemento anterior sea mayor al actual
-        while((pos_act>0) && (lista[pos_act-1]>val_act)){
+        while((pos_act>0) && (val_act <lista[pos_act-1])){
+
+            //INSERTO EL ELEMENTO EN EL QUE VOY EN EL LUGAR QUE LE CORRESPONDE HASTA EL MOMENTO POR DETRÁS 
+    
             lista[pos_act]=lista[pos_act-1]; //el elemento actual se convierte en el anterior
             pos_act--; //decrementamos la posición
         }

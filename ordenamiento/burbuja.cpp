@@ -3,8 +3,9 @@
 using namespace std;
 
 /*los números más pequeños suben hasta el inicio del arreglo, ordenamos de menor a mayor*/
-
+//LA LISTA está ordenada desde el final hasta la posición i
 template <class T>
+
 void cambiar_pos(T* lista, int i, int j){
     T aux = lista[i];
     lista[i] = lista[j];
@@ -15,8 +16,9 @@ void cambiar_pos(T* lista, int i, int j){
 template <class T>    
 void burbuja(T* lista, int n){
     for(int i = 0; i < n; i++){ //recorro la lista n veces 
-        for(int j = 0; j < n-i-1; j++){ //en cada recorrido voy desde el inicio hasta el penúltimo elemento
-            if(lista[j] > lista[j+1]){
+
+        for(int j = 0; j < n-i-1; j++){ //el -i es porque hasta la componente i el arreglo ya está ordenado    
+            if(lista[j+1] < lista[j]){
                 cambiar_pos(lista, j, j+1); //donde estaba j pongo el j+1 y viceversa
             }
         }
