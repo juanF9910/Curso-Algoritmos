@@ -37,7 +37,7 @@ y que se pueden resolver de forma similar al problema original
 */
 
 template <class T>
-bool busqueda_recursive(T* arreglo, T valor, int inicio, int fin){
+bool binaria_recursive(T* arreglo, T valor, int inicio, int fin){
 
     if (inicio > fin) {
         return false;
@@ -50,9 +50,9 @@ bool busqueda_recursive(T* arreglo, T valor, int inicio, int fin){
     }
     
     if (arreglo[medio] < valor) {
-        return busqueda_recursive(arreglo, valor, medio + 1, fin); //modifico el inicio para tomar la mitad de la derecha
+        return binaria_recursive(arreglo, valor, medio + 1, fin); //modifico el inicio para tomar la mitad de la derecha
     } else {
-        return busqueda_recursive(arreglo, valor, inicio, medio - 1);  //modifico el fin para tomar la mitad de la izquierda
+        return binaria_recursive(arreglo, valor, inicio, medio - 1);  //modifico el fin para tomar la mitad de la izquierda
     }
 }
 
@@ -61,7 +61,7 @@ int main() {
     int tamano = sizeof(arreglo) / sizeof(arreglo[0]);
     
     bool resultado = busquedaBinaria(arreglo, tamano, 5);
-    bool resultado1 = busqueda_recursive(arreglo, 5, 0, tamano - 1);
+    bool resultado1 = binaria_recursive(arreglo, 5, 0, tamano - 1);
     
     cout << "Resultado busquedaBinaria: " << resultado << endl;
     cout << "Resultado busqueda_recursive: " << resultado1 << endl;

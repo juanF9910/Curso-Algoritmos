@@ -5,6 +5,7 @@
 def merge(lista):
 
     if len(lista) > 1:
+        
         medio = len(lista) // 2 #división entera
         izquierda = lista[:medio] #desde el inicio hasta la mitad-1
         derecha = lista[medio:] #desde la mitad hasta el final

@@ -11,7 +11,7 @@ int suma(int n){
     }else{
         return n + suma(n-1); //componente recursiva
     }
-}
+} 
 
 int main(){
     int n = 5;

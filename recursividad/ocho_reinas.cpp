@@ -7,7 +7,7 @@ consiste en poner 8 reinas en un tablero de ajedrez de 8x8 de tal forma que ning
 
 using namespace std;
 
-#define N 8
+#define N 8 //8 cuadros en el tablero de ajedrez
 //ubicamos una reina por columna y determinamos en qué fila se va a ubicar
 
 //función para imprimir la solución
