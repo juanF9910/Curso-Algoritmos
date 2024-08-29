@@ -9,7 +9,7 @@ void bucketSort(vector<T> &arr) {
     int n = arr.size();
 
     // 1. Crear los buckets (cubos)
-    vector<vector<T>> buckets(n);
+    vector<vector<T>> buckets(n); //buckets es una matriz de 
 
     // 2. Distribuir los elementos en los buckets
     for (int i = 0; i < n; i++) {

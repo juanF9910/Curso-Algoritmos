@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+//inserción con incrementos decrecientes
 template <class T>
 void shellSort(vector<T> &lista, int n) {
     // El bucle principal controla el tamaño del "salto" que determina cuántos

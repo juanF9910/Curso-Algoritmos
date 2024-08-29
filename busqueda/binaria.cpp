@@ -27,12 +27,12 @@ la ventaja de los algoritmos recursivos es que son más fáciles de entender,
 su implementación es más sencilla que la de los algoritmos iterativos
 la desventaja es que pueden ser menos eficientes que los algoritmos iterativos, 
 ya que cada llamada a la función recursiva implica un cambio de contexto
-y la creación de una nueva pila de llamadas
-en general, los algoritmos recursivos son más lentos que los iterativos, 
-pero en algunos casos, como en la búsqueda binaria, 
+y la creación de una nueva pila de llamadas.
+En general, los algoritmos recursivos son más lentos que los iterativos, 
+pero en algunos casos, como en la búsqueda binaria(dicotómica), 
 la recursividad puede ser más eficiente
 la recursividad es una técnica muy útil para resolver problemas que se 
-pueden dividir en subproblemas más pequeños
+pueden dividir en subproblemas más pequeños(divide y vencerás)
 y que se pueden resolver de forma similar al problema original 
 */
 

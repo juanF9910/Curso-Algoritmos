@@ -8,9 +8,8 @@ using namespace std;
 void encontrar_viajante(int indice, int peso_restante, int valor_actual, const vector<int> &pesos, 
     const vector<int> &valores, vector<int> &solucion, vector<int> &mejor_solucion, int n, int &mejor_valor) {
     
-
     if (peso_restante == 0) { // Si el peso restante es cero, significa que hemos encontrado una solución, ahora comparamos si es mejor que la mejor solución encontrada hasta ahora
-         if (valor_actual > mejor_valor) { 
+        if (valor_actual > mejor_valor) { 
             mejor_valor = valor_actual;
             mejor_solucion = solucion;
         }
