@@ -53,7 +53,7 @@ bool resolver_ocho_reinas(vector<vector<int>> &solucion, int y){ //y es el núme
     for(int i = 0; i < N; i++){ //probamos cada una de las posiciones de las filas
 
         if(es_valido(i, y, solucion)){ //si la posición es válida
-            solucion[i][y] = 1; //colocamos la reina
+            solucion[i][y] = 1; //colocamos la reina en la fila
             //tarea básica 
             if(resolver_ocho_reinas(solucion, y + 1)){ //evaluamos si a partir de la posición actual podemos encontrar una solución
                 return true;
