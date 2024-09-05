@@ -3,6 +3,7 @@
 using namespace std;
 
 template <class T>
+
 bool busquedaBinaria(T* arreglo, int tamano, T valor) {
     int inicio = 0;
     int fin = tamano - 1; 

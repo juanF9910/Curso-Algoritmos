@@ -2,7 +2,7 @@
 using namespace std;
 
 class Graph {
-    
+
     public:
 
         Graph(int n) { // Constructor
@@ -15,6 +15,13 @@ class Graph {
                     adjMatrix[i][j] = 0;
                 }
             }
+        }
+
+        ~Graph() {
+            for (int i = 0; i < size; i++) {
+                delete[] adjMatrix[i];
+            }
+            delete[] adjMatrix;
         }
 
         // Método para agregar una arista (u, v) al grafo
@@ -33,16 +40,10 @@ class Graph {
             }
         }
 
-        ~Graph() {
-            for (int i = 0; i < size; i++) {
-                delete[] adjMatrix[i];
-            }
-            delete[] adjMatrix;
-        }
 
-private:
-    int** adjMatrix;
-    int size;
+    private:
+        int** adjMatrix;
+        int size;
 };
 
 int main() {
