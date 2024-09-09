@@ -54,11 +54,15 @@ int main() {
 
     return 0;
 }
-
 /*
-COMPLEJIDAD ESPACIAL: el vector seenstrings guarda n cadenas de tamaño promedio m, por lo que la complejidad espacial es O(n*m)
+COMPLEJIDAD ESPACIAL: 
+El vector `seenStrings` almacena `n` cadenas, cada una de tamaño promedio `m`. 
+Por lo tanto, la complejidad espacial es O(n * m).
 
-COMPLEJIDAD TEMPORAL: el método add tiene una complejidad temporal de O(1) ya que se añade al final del vector, por otro lado, 
-el método check tiene una complejidad temporal de O(n) ya que recorre el vector de cadenas para verificar si la cadena ya se encuentra en el vector
+COMPLEJIDAD TEMPORAL:
+- El método `add` tiene una complejidad temporal de O(1) para agregar una cadena 
+  al final del vector.
 
+- El método `check` tiene una complejidad temporal de O(n) porque realiza una búsqueda secuencial 
+  a través del vector para verificar si la cadena ya está presente.
 */

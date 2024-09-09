@@ -109,14 +109,17 @@ int main() {
 }
 
 /*
-COMPLEJIDAD ESPACIAL: El vector seenStrings almacena n cadenas de tamaño promedio m, por lo que la complejidad espacial es O(n*m).
+COMPLEJIDAD ESPACIAL: 
+El vector `seenStrings` almacena `n` cadenas, cada una de tamaño promedio `m`. 
+Por lo tanto, la complejidad espacial es O(n * m).
 
-COMPLEJIDAD TEMPORAL: 
-- El método `check` usa la búsqueda binaria, que tiene una complejidad temporal de O(log_2 n) ya que divide en cada iteración el vector a la mitad y 
-también usa la función `minuscula` que tiene una complejidad O(m) 
-debido a que recorre cada letra de la cadena. Por lo tanto, la complejidad temporal de `check` es O(log_2 n) + O(m) = O(m) en el peor caso, es decir, si todas 
-letras con mayúsculas, si todas son minúsculas de entrada la complejidad sería O(log_2 n).
-- El método `add` también usa búsqueda binaria para encontrar la posición correcta con complejidad O(log_2 n), y luego inserta el string 
-en la posición correcta con complejidad O(n) debido al desplazamiento de los elementos en el vector, además también usa la función `minuscula` 
-por lo que la complejidad temporal de `add` es O(n).
+COMPLEJIDAD TEMPORAL:
+- El método `check` tiene una complejidad temporal de O(m) en el peor caso, donde `m` es el tamaño de la cadena. 
+  Esto se debe a que utiliza la búsqueda binaria con una complejidad de O(log n) y la conversión a minúsculas con una complejidad de O(m). 
+  La conversión a minúsculas domina la complejidad temporal.
+  
+- El método `add` tiene una complejidad temporal de O(n) en el peor caso, donde `n` es el número de cadenas en `seenStrings`. 
+  Esto se debe a que realiza una búsqueda binaria con una complejidad de O(log n), seguido de una inserción en el vector que puede 
+  requerir desplazar elementos, lo que tiene una complejidad de O(n), además de la conversión a minúsculas con una complejidad de O(m). 
+  La inserción en el vector domina la complejidad temporal.
 */

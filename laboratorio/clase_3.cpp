@@ -8,6 +8,7 @@ using namespace std;
 y un booleano que indica si el nodo es el final de una palabra. */
 
 class Node {
+    
     public:
         vector<Node*> lista; // Vector de punteros a nodos hijos, uno por cada letra del alfabeto (26 en total).
         bool isEndOfWord; // Indica si el nodo es el final de una palabra en el Trie.
@@ -18,7 +19,7 @@ class Node {
 };
 
 // Clase que representa el sitema completo.
-class Sistema {
+class Sistema { 
 
     private:
         Node* root; // Puntero a la raíz del sistema, que siempre está vacía al inicio.
@@ -57,7 +58,7 @@ class Sistema {
             Node* node = root;  
             for (char c : str) {
                 int index = charToIndex(c);  // Convertimos la letra minúscula a índice.
-                if (node->lista[index] == nullptr) { // Si no existe el nodo para la letra actual, la palabra no está en
+                if (node->lista[index] == nullptr) { // Si no existe el nodo para la letra actual, la palabra no está en el sistema
                     return false;
                 }
                 node = node->lista[index];  // Avanzamos al nodo correspondiente.
@@ -87,16 +88,17 @@ int main() {
 
 /*
 COMPLEJIDAD ESPACIAL: 
-El sistema almacena n nodos, donde n es el número total de letras insertadas. 
-Cada nodo tiene un vector de 26 punteros, y cada uno puede apuntar a otro nodo o ser nullptr, 
-además de un booleano que indica si el nodo es el final de una palabra.
-Por lo tanto, la complejidad espacial es O(n * 26), aunque puede simplificarse a O(n) 
-dado que 26 es una constante.
+El sitema almacena `n` nodos, donde `n` es el número total de letras de la palabra total. 
+Cada nodo tiene un vector de 26 punteros (uno para cada letra del alfabeto), por lo que 
+la complejidad espacial es O(n * k), donde `k` es el número de punteros por nodo (26 en este caso). 
+Como `k` es una constante, la complejidad espacial se puede simplificar a O(n).
 
 COMPLEJIDAD TEMPORAL:
-- El método add tiene una complejidad O(m), donde m es la longitud de la palabra a añadir, 
-  ya que se recorre una vez cada letra de la palabra.
-- El método check también tiene una complejidad O(m), ya que recorre cada letra de la palabra 
-  para verificar si existe en el Trie.
+- El método `add` tiene una complejidad temporal de O(m), donde `m` es la longitud de la palabra 
+  que se añade, ya que se recorre cada letra de la palabra una vez para insertarla en el sistema
+- El método `check` también tiene una complejidad temporal de O(m), ya que recorre cada letra de la palabra 
+  para verificar si existe en el sistema
 
+En ambos métodos, la complejidad está dominada por la longitud de la palabra, ya que el tiempo requerido 
+para la inserción y búsqueda en el sistema es proporcional a la longitud de la palabra.
 */
