@@ -75,6 +75,9 @@ int main() {
     sistema.add("mundo");
     sistema.add("HOLAa");
     sistema.add("bello");
+    sistema.add("Hi");
+    sistema.add("Hit");
+    
 
     // Verificar si las palabras están
     cout << sistema.check("hola") << endl;      // 1 (existe)
@@ -82,6 +85,9 @@ int main() {
     cout << sistema.check("MUNDO") << endl;     // 1 (existe, mayúsculas convertidas a minúsculas)
     cout << sistema.check("mundhol") << endl;   // 0 (no existe como palabra completa)
     cout << sistema.check("llo") << endl;       // 0 (no existe)
+    cout << sistema.check("Hit") << endl;     // 1 (existe)
+    cout<< sistema.check("Hi") << endl;         // 1 (existe)
+    cout << sistema.check("mun") << endl;         // 0 (no existe)
 
     return 0;
 }
@@ -96,6 +102,7 @@ Como `k` es una constante, la complejidad espacial se puede simplificar a O(n).
 COMPLEJIDAD TEMPORAL:
 - El método `add` tiene una complejidad temporal de O(m), donde `m` es la longitud de la palabra 
   que se añade, ya que se recorre cada letra de la palabra una vez para insertarla en el sistema
+  
 - El método `check` también tiene una complejidad temporal de O(m), ya que recorre cada letra de la palabra 
   para verificar si existe en el sistema
 

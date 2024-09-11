@@ -19,6 +19,8 @@ class SortedList {
         void add(const string& str); // Método add para agregar cadenas en orden alfabético
 
         bool check(const string& str); // Método check para buscar si una cadena ya fue agregada
+
+        void mostrar(); // Método para mostrar las cadenas en orden alfabético
 };
 
 SortedList::SortedList() {
@@ -26,6 +28,12 @@ SortedList::SortedList() {
 
 }
 
+void SortedList::mostrar() {
+    for (const string& s : seenStrings) {
+        cout << s << " ";
+    }
+    cout << endl;
+}
 // Método para convertir una cadena a minúsculas
 string SortedList::minuscula(const string& str) { //en este caso como queremos tener una lista ordenada debemos tener en cuenta las minúsculas y mayúsculas
 //que se manejan de forma diferente en el código ASCII, mezclar mayúsculas y minúsculas puede generar errores en la comparación de cadenas.
@@ -100,7 +108,9 @@ int main() {
     sl.add("hola");
     sl.add("mundo");
     sl.add("Hola");
+    sl.add("Hi");
 
+    sl.mostrar(); // Imprime las cadenas ordenadas
     cout << sl.check("hola") << endl;  // 1
     cout << sl.check("MUNDO") << endl; // 1, convierte a minúsculas 
     cout << sl.check("adios") << endl; // 0
